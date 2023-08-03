@@ -58,4 +58,16 @@ export function executeWork(employee: DirectorInterface | TeacherInterface): str
   }
 }
 
+export type Subjects = 'Math' | 'History';
+
+export function teachClass(todayClass:Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math'
+  } else if (todayClass === 'History') {
+    return 'Teaching History'
+  } else {
+    return '';
+  }
+}
+
 export { Teacher, Director };

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Director = exports.Teacher = void 0;
+exports.Director = exports.Teacher = exports.teachClass = exports.executeWork = exports.isDirector = void 0;
 var Director = /** @class */ (function () {
     function Director() {
     }
@@ -37,3 +37,25 @@ function createEmployee(salary) {
     }
     return new Director();
 }
+function isDirector(employee) {
+    return employee.workDirectorTasks !== undefined;
+}
+exports.isDirector = isDirector;
+function executeWork(employee) {
+    if (isDirector(employee)) {
+        return employee.workDirectorTasks();
+    }
+    else {
+        return employee.workTeacherTasks();
+    }
+}
+exports.executeWork = executeWork;
+function teachClass(todayClass) {
+    if (todayClass === 'Math') {
+        return 'Teaching Math';
+    }
+    else if (todayClass === 'History') {
+        return 'Teaching History';
+    }
+}
+exports.teachClass = teachClass;

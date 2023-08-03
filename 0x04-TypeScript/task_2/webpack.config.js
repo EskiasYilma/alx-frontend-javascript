@@ -13,7 +13,7 @@ module.exports = {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         options: {
-          transpileOnly: true
+          transpileOnly: true,
         }
       }
     ]
@@ -25,7 +25,7 @@ module.exports = {
     contentBase: "./dist"
   },
   plugins: [
-    new ForkTsCheckerWebpackPlugin(),
+    new ForkTsCheckerWebpackPlugin(), // Add ForkTsCheckerWebpackPlugin as a plugin here
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Development"
